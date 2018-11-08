@@ -1,35 +1,124 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from 'react'
+import styled from 'styled-components'
+// import { Link } from 'gatsby'
 
-const Header = () => (
-  <div
-    style={{
-      background: 'black',
-      marginBottom: '1.45rem',
-      marginTop:'0px',
-      display:'block',
-      boxShadow:'0px 0px 7px black',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0, textAlign:'center' }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          First Step Coding
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
-export default Header 
+export default class Header extends Component {
+  constructor() {
+    super()
+    this.state = {
+      dropdownOpened: false
+    }
+  }
+
+  toggleDropdown = () => {
+    const oldStatus = this.state.dropdownOpened
+    this.setState({
+      dropdownOpened: !oldStatus
+    })
+  }
+
+  render() {
+    return (
+      <HeaderWrapper>
+        <MenuItem href='https://www.firststepcoding.com/'>
+          LOGO
+        </MenuItem>
+        <RightGroupItems>
+          <div>
+            <MenuItem onClick={this.toggleDropdown}>Courses</MenuItem>
+            {
+              this.state.dropdownOpened &&
+              <DropdownMenu>
+                <MenuItem href='https://www.firststepcoding.com/intro-to-coding'>
+                  Intro to Coding
+                </MenuItem>
+                <MenuItem href='https://www.firststepcoding.com/bootcamp-prep'>
+                  Bootcamp Prep
+                </MenuItem>
+                <MenuItem href='https://www.firststepcoding.com/intro-to-sql'>
+                  SQL for Analytics
+                </MenuItem>
+                <MenuItem href='https://www.firststepcoding.com/corporate-training'>
+                  Corporate Training
+                </MenuItem>
+              </DropdownMenu>
+            }
+          </div>
+          <MenuItem href='https://www.firststepcoding.com/instructors'>Instructors</MenuItem>
+          <MenuItem href='https://www.firststepcoding.com/bootcamp-partners'>Bootcamp partners</MenuItem>
+          <MenuItem href='https://www.firststepcoding.com/faq'>F.A.Q.</MenuItem>
+          <MenuItem href='https://www.firststepcoding.com/social-impact'>Social Impact</MenuItem>
+          <ApplyButton href='https://www.firststepcoding.com/register'>
+            Register
+          </ApplyButton>
+        </RightGroupItems>
+      </HeaderWrapper>
+    )
+  }
+}
+
+const RightGroupItems = styled.div`
+  display: flex;
+  margin-left: auto;
+`
+
+const HeaderWrapper = styled.div`
+  width: 100%;
+  border: 0 solid transparent;
+  background: #1a1a1a;
+  display: inline-flex;
+  margin: 0;
+  verticalAlign: middle;
+  borderRadius: 0;
+  align-items: center;
+`
+
+const MenuItem = styled.a`
+  display: block;
+  padding: 15px 1.14285714em;
+  text-transform: uppercase;
+  font-family: Raleway;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #3d9991;
+  }
+`
+
+const DropdownMenu = styled.div`
+  border-radius: 0 0 .28571429rem .28571429rem;
+  margin: 0;
+  flex-direction: column;
+  position: absolute;
+  min-width: max-content;
+  padding: 0;
+  font-size: 1em;
+  text-align: left;
+  box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+  border: 1px solid rgba(34,36,38,.15);
+  z-index: 11;
+  background: #1a1a1a;
+`
+
+const ApplyButton = styled.a`
+  background-color: #3d9991;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+  font-family: Raleway;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #328b83;
+  }
+`
