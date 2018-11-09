@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 // import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import MobileHeader from './mobileHeader'
 import Footer from './footer'
 import './layout.css'
 
@@ -17,6 +18,7 @@ const Layout = ({ children }) => (
       ]}
     />
     <Header />
+    <MobileHeader />
     <div
       style={{
         margin: '0 auto',

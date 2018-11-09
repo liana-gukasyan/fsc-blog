@@ -88,6 +88,10 @@ const HeaderWrapper = styled.div`
   verticalAlign: middle;
   borderRadius: 0;
   align-items: center;
+
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
 `
 
 const MenuItem = styled.a`
