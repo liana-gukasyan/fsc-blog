@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 // import { Link } from 'gatsby'
 
+import logo from '../images/fsc_logo.png'
+
 export default class Header extends Component {
   constructor() {
     super()
@@ -20,9 +22,9 @@ export default class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <MenuItem href='https://www.firststepcoding.com/'>
-          LOGO
-        </MenuItem>
+        <LogoLink href='https://www.firststepcoding.com/'>
+          <LogoImage src={logo}/>
+        </LogoLink>
         <RightGroupItems>
           <div>
             <MenuItem onClick={this.toggleDropdown}>Courses</MenuItem>
@@ -48,17 +50,32 @@ export default class Header extends Component {
           <MenuItem href='https://www.firststepcoding.com/bootcamp-partners'>Bootcamp partners</MenuItem>
           <MenuItem href='https://www.firststepcoding.com/faq'>F.A.Q.</MenuItem>
           <MenuItem href='https://www.firststepcoding.com/social-impact'>Social Impact</MenuItem>
-          <ApplyButton href='https://www.firststepcoding.com/register'>
-            Register
-          </ApplyButton>
+          <MenuItem>
+            <ApplyButton href='https://www.firststepcoding.com/register'>
+              Register
+            </ApplyButton>
+          </MenuItem>
         </RightGroupItems>
       </HeaderWrapper>
     )
   }
 }
 
+const LogoLink = styled.a`
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 15px 13px;
+`
+
+const LogoImage = styled.img`
+  width: 200px;
+  margin: 0;
+`
+
 const RightGroupItems = styled.div`
   display: flex;
+  align-items: center;
   margin-left: auto;
 `
 
@@ -74,8 +91,10 @@ const HeaderWrapper = styled.div`
 `
 
 const MenuItem = styled.a`
-  display: block;
-  padding: 15px 1.14285714em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 15px 13px;
   text-transform: uppercase;
   font-family: Raleway;
   font-size: 12px;
@@ -84,6 +103,7 @@ const MenuItem = styled.a`
   line-height: 20px;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: #3d9991;

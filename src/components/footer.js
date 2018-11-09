@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import facebook from '../images/facebook.svg'
+import meetup from '../images/meetup-logo.svg'
+import github from '../images/github.svg'
+
 export default class Footer extends Component {
   render() {
     return (
       <FooterWrapper>
         <SocialSection>
           <SocialLink target='_blank' href='https://www.facebook.com/yourfirststepcoding'>
-            facebook
+            <SocialImg src={facebook}/>
           </SocialLink>
           <SocialLink target='_blank' href='https://github.com/firststepcoding'>
-            github
+            <SocialImg src={github}/>
           </SocialLink>
           <SocialLink target='_blank' href='https://www.meetup.com/Learn-to-code-for-complete-beginners-in-Boston/'>
-            meetup Boston
+            <SocialImg src={meetup}/>
           </SocialLink>
           <SocialLink target='_blank' href='https://www.meetup.com/Learn-to-code-for-complete-beginners-in-San-Francisco/'>
-            meetup San-Francisco
+            <SocialImg src={meetup}/>
           </SocialLink>
         </SocialSection>
         <ContactsSection>
@@ -56,6 +60,9 @@ const EmailLink = styled.a`
 `
 
 const SocialSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #333;
   color: rgba(255,255,255,.7);
   text-align: center;
@@ -63,6 +70,26 @@ const SocialSection = styled.div`
 `
 
 const SocialLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255,255,255,.8);
+  border-radius: 50%;
   text-decoration: none;
-  color: rgba(255,255,255,.8);
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: white;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+`
+
+const SocialImg = styled.img`
+  height: 24px;
+  margin: 0;
 `
