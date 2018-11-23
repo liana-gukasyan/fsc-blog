@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 
 import { Link } from 'gatsby'
 
@@ -11,7 +12,7 @@ const IndexPage = ({data}) => {
   <Layout>
     {data.allMarkdownRemark.edges.map(({node}) => (
       <PostContent key={node.id}>
-        <PostDate>{node.frontmatter.date} {node.timeToRead}min read</PostDate>
+        <PostDate>{formatDate(node.frontmatter.date)}</PostDate>
         <PostTitle className='title'>
           <Link to={node.fields.slug} style={{textDecoration: 'none', color: 'inherit'}}>
             {node.frontmatter.title}
@@ -47,6 +48,12 @@ query HomePageQuery{
   }
 }
 `
+
+function formatDate(date) {
+  let publishDate = moment(date)
+  publishDate = moment().format('MMMM D, YYYY')
+  return publishDate
+}
 
 const PostContent = styled.div`
   width: 100%;
