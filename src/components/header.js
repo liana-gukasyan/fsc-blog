@@ -108,6 +108,7 @@ const MenuItem = styled.a`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     color: #3d9991;
