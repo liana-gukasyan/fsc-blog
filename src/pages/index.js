@@ -7,7 +7,6 @@ import {PostContent, PostTitle, ShortInfo, PostDate, PostText} from '../componen
 import {formatDate} from '../utils'
 
 const IndexPage = ({data}) => {
-  // console.log(data)
   return(
   <Layout>
     {data.allMarkdownRemark.edges.map(({node}) => (
@@ -27,7 +26,7 @@ const IndexPage = ({data}) => {
 }
 export default IndexPage
 
-export const  query = graphql`
+export const query = graphql`
 query HomePageQuery{
   allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
     totalCount

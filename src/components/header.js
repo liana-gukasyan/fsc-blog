@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// import { Link } from 'gatsby'
 
 import logo from '../images/fsc_logo.png'
 
