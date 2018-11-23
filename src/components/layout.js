@@ -7,6 +7,7 @@ import Header from './header'
 import MobileHeader from './mobileHeader'
 import Footer from './footer'
 import './layout.css'
+import favicon from '../images/favicon.ico'
 
 const Layout = ({ children }) => (
   <div>
@@ -34,6 +35,9 @@ const Layout = ({ children }) => (
         { name: 'twitter:card', content: 'summary'},
         { name: 'twitter:description', content: 'Part-time beginner-friendly coding courses in small groups with 8-10 students. Level up in your career, or begin a new adventure.'},
         { name: 'description', content: 'Part-time beginner-friendly coding courses in small groups with 8-10 students. Level up in your career, or begin a new adventure.'},
+      ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image', href: `${favicon}` }
       ]}
     />
     <Header />
