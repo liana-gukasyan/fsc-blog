@@ -1,14 +1,25 @@
-import React from "react";
+import React from 'react'
+
+import { Link } from 'gatsby'
+
+import Layout from '../components/layout'
+import {PostContent, PostTitle, ShortInfo, PostDate, PostText} from '../components/postComponents'
+import {formatDate} from '../utils'
+
 export default ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.markdownRemark
   return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <h4 style={{color: 'rgb(165, 164, 164)'}}>{post.frontmatter.details} <span style={{fontSize: '0.8em'}}> -{post.frontmatter.date}</span></h4>
-      <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
-    </div>
-  );
-};
+    <Layout>
+      <PostContent>
+        <PostDate>{formatDate(post.frontmatter.date)}</PostDate>
+        <PostTitle>{post.frontmatter.title}</PostTitle>
+        <ShortInfo>{post.frontmatter.details}</ShortInfo>
+        <PostText dangerouslySetInnerHTML = {{ __html: post.html }}/>
+        <Link to='./'>Go home link</Link>
+      </PostContent>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query PostQuery($slug: String!) {
@@ -21,4 +32,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
