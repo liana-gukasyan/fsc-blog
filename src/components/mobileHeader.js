@@ -39,11 +39,11 @@ export default class MobileHeader extends Component {
               <MenuItem href='https://www.firststepcoding.com/bootcamp-partners'>Bootcamp partners</MenuItem>
               <MenuItem href='https://www.firststepcoding.com/faq'>F.A.Q.</MenuItem>
               <MenuItem href='https://www.firststepcoding.com/social-impact'>Social Impact</MenuItem>
-              <MenuItem>
+              <ApplyButtonWrapper>
                 <ApplyButton href='https://www.firststepcoding.com/register'>
                   Register
                 </ApplyButton>
-              </MenuItem>
+              </ApplyButtonWrapper>
             </div>
           }
         </MenuWrapper>
@@ -156,6 +156,14 @@ const MenuItem = styled.a`
   }
 `
 
+const ApplyButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 15px 13px;
+  justify-content: center;
+`
+
 const ApplyButton = styled.a`
   background-color: #3d9991;
   color: #fff;
@@ -168,6 +176,7 @@ const ApplyButton = styled.a`
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  cursor: pointer;
 
   &:hover {
     background-color: #328b83;
