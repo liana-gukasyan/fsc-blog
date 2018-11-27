@@ -1,17 +1,16 @@
 import React from 'react'
 
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import {PostContent, PostTitle, ShortInfo, PostDate, PostText} from '../components/postComponents'
-import {formatDate} from '../utils'
 
 const IndexPage = ({data}) => {
   return(
   <Layout>
     {data.allMarkdownRemark.edges.map(({node}) => (
       <PostContent key={node.id}>
-        <PostDate>{formatDate(node.frontmatter.date)}</PostDate>
+        <PostDate>{node.frontmatter.date}</PostDate>
         <PostTitle className='title'>
           <Link to={node.fields.slug} style={{textDecoration: 'none', color: 'inherit'}}>
             {node.frontmatter.title}
@@ -37,7 +36,7 @@ query HomePageQuery{
         }
         frontmatter {
           title
-          date
+          date(formatString: "MMMM Do, YYYY")
           details
         }
         excerpt

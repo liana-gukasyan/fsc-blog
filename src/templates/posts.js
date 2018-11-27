@@ -4,14 +4,13 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import {PostContent, PostTitle, ShortInfo, PostDate, PostText} from '../components/postComponents'
-import {formatDate} from '../utils'
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
       <PostContent>
-        <PostDate>{formatDate(post.frontmatter.date)}</PostDate>
+        <PostDate>{post.frontmatter.date}</PostDate>
         <PostTitle>{post.frontmatter.title}</PostTitle>
         <ShortInfo>{post.frontmatter.details}</ShortInfo>
         <PostText dangerouslySetInnerHTML = {{ __html: post.html }}/>
@@ -28,7 +27,7 @@ export const query = graphql`
       frontmatter {
         title
         details
-        date
+        date(formatString: "MMMM Do, YYYY")
       }
     }
   }
