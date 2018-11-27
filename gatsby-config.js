@@ -14,14 +14,6 @@ module.exports = {
         path: `${__dirname}/src/`
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-prismjs`,
-        ]
-      }
-    },
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-transformer-remark`,
@@ -36,6 +28,7 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          `gatsby-remark-prismjs`
         ],
       },
     },
