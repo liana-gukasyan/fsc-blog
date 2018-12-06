@@ -59,3 +59,10 @@ export const PostText = styled.div`
   line-height: 1.6em;
   color: rgba(26,26,26,.7);
 `
+
+export const GoHomeLinkWrap = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 48px;
+  margin-right: 16px;
+`

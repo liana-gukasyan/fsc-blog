@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  font-family: adobe-garamond-pro;
 }
 article,
 aside,
@@ -40,6 +41,7 @@ template {
 a {
   background-color: transparent;
   color: #3d9991;
+  font-family: adobe-garamond-pro;
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }

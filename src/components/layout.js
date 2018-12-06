@@ -10,7 +10,7 @@ import './layout.css'
 import favicon from '../images/favicon.ico'
 
 const Layout = ({ children }) => (
-  <div>
+  <div style={{'display': 'flex', 'flex-direction': 'column', 'min-height': '100vh'}}>
     <Helmet
       title='First Step Coding | Bootcamp Prep'
       meta={[
@@ -37,7 +37,8 @@ const Layout = ({ children }) => (
         { name: 'description', content: 'Part-time beginner-friendly coding courses in small groups with 8-10 students. Level up in your career, or begin a new adventure.'},
       ]}
       link={[
-        { rel: 'shortcut icon', type: 'image', href: `${favicon}` }
+        { rel: 'shortcut icon', type: 'image', href: `${favicon}` },
+        { rel: 'stylesheet', href: 'https://use.typekit.net/kfz0hhy.css' },
       ]}
     />
     <Header />
