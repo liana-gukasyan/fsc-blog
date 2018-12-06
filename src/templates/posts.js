@@ -3,7 +3,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import {PostContent, PostTitle, ShortInfo, PostDate, PostText, GoHomeLinkWrap} from '../components/postComponents'
+import {PostContent, PostPageTitle, ShortInfo, PostDate, PostText, GoHomeLinkWrap} from '../components/postComponents'
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -11,7 +11,7 @@ export default ({ data }) => {
     <Layout>
       <PostContent>
         <PostDate>{post.frontmatter.date}</PostDate>
-        <PostTitle>{post.frontmatter.title}</PostTitle>
+        <PostPageTitle>{post.frontmatter.title}</PostPageTitle>
         <ShortInfo>{post.frontmatter.details}</ShortInfo>
         <PostText dangerouslySetInnerHTML = {{ __html: post.html }}/>
         <GoHomeLinkWrap>

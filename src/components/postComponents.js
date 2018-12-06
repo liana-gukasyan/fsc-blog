@@ -11,6 +11,18 @@ export const PostContent = styled.div`
   }
 `
 
+export const PostPageTitle = styled.h1`
+  margin: 12px 0 36px 0;
+  color: rgba(26,26,26,.9);
+  font-family: adobe-garamond-pro;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.2em;
+`
+
 export const PostTitle = styled.h3`
   margin: 12px 0 36px 0;
   color: rgba(26,26,26,.9);

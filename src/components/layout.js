@@ -10,7 +10,7 @@ import './layout.css'
 import favicon from '../images/favicon.ico'
 
 const Layout = ({ children }) => (
-  <div style={{'display': 'flex', 'flex-direction': 'column', 'min-height': '100vh'}}>
+  <div style={{'display': 'flex', 'flexDirection': 'column', 'minHeight': '100vh'}}>
     <Helmet
       title='First Step Coding | Bootcamp Prep'
       meta={[
