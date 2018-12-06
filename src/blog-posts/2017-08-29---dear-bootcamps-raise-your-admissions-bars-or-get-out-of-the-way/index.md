@@ -1,7 +1,7 @@
 ---
 title: "Dear Bootcamps: Raise Your Admissions Bars or Get Out of the Way"
 date: "2017-08-29"
-details: "This post was written by Mary Bergeron, Director of Marketing at SwitchUp."
+details: ""
 ---
 
 ![](bootcamps-admissions-bar.png)
