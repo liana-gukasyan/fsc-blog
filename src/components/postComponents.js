@@ -52,6 +52,13 @@ export const ShortInfo = styled.p`
   color: rgba(26,26,26,.7);
 `
 
+export const TimeToRead = styled.p`
+  margin-top: 10px;
+  text-align: right;
+  font-size: 16px;
+  font-family: adobe-garamond-pro;
+`
+
 export const PostDate = styled.span`
   color: rgba(26,26,26,.4);
   font-family: adobe-garamond-pro;

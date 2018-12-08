@@ -3,7 +3,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import {PostContent, PostTitle, ShortInfo, PostDate, PostText} from '../components/postComponents'
+import {PostContent, PostTitle, ShortInfo, PostDate, PostText, TimeToRead} from '../components/postComponents'
 
 const IndexPage = ({data}) => {
   return(
@@ -18,6 +18,7 @@ const IndexPage = ({data}) => {
         </PostTitle>
         <ShortInfo>{node.frontmatter.details}</ShortInfo>
         <PostText>{node.excerpt}</PostText>
+        <TimeToRead>{node.timeToRead}min read</TimeToRead>
       </PostContent>
     ))}
   </Layout>
@@ -39,7 +40,7 @@ query HomePageQuery{
           date(formatString: "MMMM Do, YYYY")
           details
         }
-        excerpt
+        excerpt(pruneLength: 450)
         timeToRead
       }
     }
