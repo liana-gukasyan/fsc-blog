@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'First Step Coding Blog',
+    url: 'https://www.firststepcoding.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

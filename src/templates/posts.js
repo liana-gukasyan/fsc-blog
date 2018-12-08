@@ -1,12 +1,20 @@
 import React from 'react'
-
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import {PostContent, PostPageTitle, ShortInfo, PostDate, PostText, GoHomeLinkWrap} from '../components/postComponents'
+import {
+  PostContent,
+  PostPageTitle,
+  ShortInfo,
+  PostDate,
+  PostText,
+  GoHomeLinkWrap
+} from '../components/postComponents'
+import SocialShare from '../components/socialShare'
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const postLink = window.location.href
   return (
     <Layout>
       <PostContent>
@@ -14,6 +22,7 @@ export default ({ data }) => {
         <PostPageTitle>{post.frontmatter.title}</PostPageTitle>
         <ShortInfo>{post.frontmatter.details}</ShortInfo>
         <PostText dangerouslySetInnerHTML = {{ __html: post.html }}/>
+        <SocialShare postTitle={post.frontmatter.title} postLink={postLink} />
         <GoHomeLinkWrap>
           <Link to='./'>{'← Back to blog'}</Link>
         </GoHomeLinkWrap>
@@ -34,3 +43,5 @@ export const query = graphql`
     }
   }
 `
+
+
