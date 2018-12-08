@@ -99,7 +99,7 @@ const MenuItem = styled.a`
   height: 100%;
   padding: 15px 13px;
   text-transform: uppercase;
-  font-family: Raleway;
+  font-family: proxima-nova;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -145,7 +145,7 @@ const ApplyButton = styled.a`
   border-radius: 6px;
   font-size: 12px;
   text-align: center;
-  font-family: Raleway;
+  font-family: proxima-nova;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
