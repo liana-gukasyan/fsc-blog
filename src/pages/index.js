@@ -9,7 +9,7 @@ const IndexPage = ({data}) => {
   return(
   <Layout>
     {data.allMarkdownRemark.edges.map(({node}) => (
-      <PostContent key={node.id}>
+      <PostContent key={node.frontmatter.date}>
         <PostDate>{node.frontmatter.date}</PostDate>
         <PostTitle className='title'>
           <Link to={node.fields.slug} style={{textDecoration: 'none', color: 'inherit'}}>
