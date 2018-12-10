@@ -14,7 +14,12 @@ import SocialShare from '../components/socialShare'
 
 export default ({ data }) => {
   const post = data.markdownRemark
-  const postLink = window.location.href
+  let postLink
+  if (typeof window !== 'undefined') {
+    postLink = window.location.href
+  } else {
+    postLink=''
+  }
   return (
     <Layout>
       <PostContent>
